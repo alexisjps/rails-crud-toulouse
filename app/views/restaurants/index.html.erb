@@ -1,0 +1,10 @@
+<h1>Hello world, voici les meilleurds restaurants près de chez toi</h1>
+<%= link_to 'Créer un restooooo', new_restaurant_path, class: 'btn btn-success text-white' %>
+<% @restaurants.each do |restaurant| %>
+<div class="bg-light w-25  p-5 m-2 rounded">
+  <p><%= restaurant.name %></p>
+  <p><%= restaurant.address %></p>
+  <p><%= restaurant.rating %>/5</p>
+  <%= link_to 'Voir le restaurant', restaurant_path(restaurant.id), class: 'btn btn-primary' %>
+</div>
+<% end %>
